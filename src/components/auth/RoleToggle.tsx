@@ -33,9 +33,6 @@ const RoleToggle = ({ value, onChange }: RoleToggleProps) => {
   
   return (
     <div className="mb-6">
-      <label className="block mb-2 text-sm font-medium text-gray-700">
-        I am a:
-      </label>
       <div className="relative h-12">
         <div
           className="absolute h-full bg-gray-200 rounded-full transition-all duration-300 ease-in-out"
@@ -54,14 +51,14 @@ const RoleToggle = ({ value, onChange }: RoleToggleProps) => {
             value="founder"
             className="z-10 rounded-full data-[state=on]:bg-transparent data-[state=off]:bg-transparent data-[state=on]:text-gray-900 data-[state=off]:text-gray-600 data-[state=on]:font-medium transition-all"
           >
-            I'm a Founder
+            Founder
           </ToggleGroupItem>
           <ToggleGroupItem
             ref={investorRef}
             value="investor"
             className="z-10 rounded-full data-[state=on]:bg-transparent data-[state=off]:bg-transparent data-[state=on]:text-gray-900 data-[state=off]:text-gray-600 data-[state=on]:font-medium transition-all"
           >
-            I'm an Investor
+            Investor
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
