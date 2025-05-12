@@ -72,12 +72,13 @@ const FounderOnboardingStep1 = () => {
   };
 
   // Check if all fields have values
-  const areAllFieldsFilled = 
+  const areAllFieldsFilled = Boolean(
     currentValues.startupName && 
     currentValues.industry && 
     currentValues.stage && 
     currentValues.fundingGoal && 
-    currentValues.teamSize;
+    currentValues.teamSize
+  );
 
   return (
     <div>

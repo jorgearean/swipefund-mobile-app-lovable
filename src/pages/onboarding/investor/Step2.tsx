@@ -84,11 +84,12 @@ const InvestorOnboardingStep2 = () => {
   };
 
   // Check if all fields have values
-  const areAllFieldsFilled = 
+  const areAllFieldsFilled = Boolean(
     currentValues.ticketSize && 
     currentValues.sectorFocus && 
     currentValues.linkedinUrl && 
-    currentValues.portfolioLink;
+    currentValues.portfolioLink
+  );
 
   return (
     <div>

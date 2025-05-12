@@ -72,11 +72,12 @@ const InvestorOnboardingStep1 = () => {
   };
 
   // Check if all fields have values
-  const areAllFieldsFilled = 
+  const areAllFieldsFilled = Boolean(
     currentValues.investorName && 
     currentValues.investorType && 
     currentValues.geographyFocus && 
-    currentValues.stageFocus;
+    currentValues.stageFocus
+  );
 
   return (
     <div>
