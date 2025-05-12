@@ -39,7 +39,7 @@ const Login = ({ onToggle }: LoginProps) => {
       console.error("Login error:", error);
       toast({
         title: "Error",
-        description: "Failed to sign in. Please check your credentials.",
+        description: "Failed to log in. Please check your credentials.",
         variant: "destructive",
       });
     } finally {
@@ -89,10 +89,10 @@ const Login = ({ onToggle }: LoginProps) => {
         {isLoading ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Signing in...
+            Logging in...
           </>
         ) : (
-          "Sign In"
+          "Log In"
         )}
       </Button>
       
@@ -124,7 +124,7 @@ const Login = ({ onToggle }: LoginProps) => {
         className="w-full"
         onClick={() => {
           // Google sign-in would go here
-          console.log("Google sign-in clicked");
+          console.log("Google log-in clicked");
         }}
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ const Login = ({ onToggle }: LoginProps) => {
             fill="#EA4335"
           />
         </svg>
-        Sign in with Google
+        Log in with Google
       </Button>
     </form>
   );

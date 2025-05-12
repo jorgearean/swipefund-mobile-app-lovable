@@ -22,7 +22,7 @@ const Auth = () => {
           </CardTitle>
           <CardDescription className="text-center">
             {isLogin 
-              ? "Sign in to your SwipeFund account" 
+              ? "Log in to your SwipeFund account" 
               : "Join SwipeFund to connect with investors"}
           </CardDescription>
         </CardHeader>
