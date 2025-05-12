@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
@@ -16,6 +17,7 @@ interface LoginFormData {
 }
 
 const Login = ({ onToggle }: LoginProps) => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
 
@@ -34,7 +36,20 @@ const Login = ({ onToggle }: LoginProps) => {
         description: "Redirecting to your dashboard...",
       });
       
-      // Redirect logic would go here
+      // Determine which dashboard to redirect to based on role (for demo purposes)
+      // This would normally come from authentication response
+      const role = data.email.includes("investor") ? "investor" : "founder";
+      
+      // Check if the user has completed onboarding (for demo purposes)
+      // This would normally come from user data in the backend
+      const hasCompletedOnboarding = false;
+      
+      // Redirect based on role and onboarding status
+      if (hasCompletedOnboarding) {
+        navigate(role === "investor" ? "/investor-dashboard" : "/founder-dashboard");
+      } else {
+        navigate(`/onboarding/${role}/step1`);
+      }
     } catch (error) {
       console.error("Login error:", error);
       toast({

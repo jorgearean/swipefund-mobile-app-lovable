@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
@@ -18,6 +19,7 @@ interface SignupFormData {
 }
 
 const Signup = ({ onToggle }: SignupProps) => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [role, setRole] = useState<"founder" | "investor">("founder");
   
@@ -36,10 +38,11 @@ const Signup = ({ onToggle }: SignupProps) => {
       // For now, we'll just show a success notification
       toast({
         title: "Account created",
-        description: "Redirecting to your dashboard...",
+        description: "Redirecting to profile setup...",
       });
       
-      // Redirect logic would go here
+      // Redirect to role-specific onboarding
+      navigate(`/onboarding/${role}/step1`);
     } catch (error) {
       console.error("Signup error:", error);
       toast({
